@@ -27,7 +27,7 @@
 
 @font-face {
   font-family: ReenieBeanie;
-  src: url(file:///C:/Users/Home/Desktop/toDo/fonts/ReenieBeanie.ttf); }
+  src: url(fonts/ReenieBeanie.ttf); }
 .toDo-main-wrap {
   width: 800px;
   box-shadow: 5px 5px 7px #212121;

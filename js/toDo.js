@@ -6,7 +6,6 @@ $(document).ready(function(){
        let todoList=JSON.parse(savedToDo);
        for(let key in todoList){
             AddToDoItem(todoList[key]);
-            console.log(todoList[key].id);
             if(todoList[key].isDone === true){
                 let li = $('.toDo-nav li');
                 $(li[key]).addClass('completed');

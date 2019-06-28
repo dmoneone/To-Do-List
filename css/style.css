@@ -71,7 +71,7 @@
       font-family: Verdana;
       color: black;
       padding: 10px 0px 20px 0px; }
-    .toDo-main-wrap .toDo-block-wrap form {
+    .toDo-main-wrap .toDo-block-wrap .toDo-form {
       display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flex;
@@ -79,7 +79,7 @@
       display: flex;
       justify-content: center;
       padding-bottom: 20px; }
-      .toDo-main-wrap .toDo-block-wrap form input[type="text"] {
+      .toDo-main-wrap .toDo-block-wrap .toDo-form input[type="text"] {
         width: 300px;
         height: 40px;
         padding-left: 20px;
@@ -87,13 +87,13 @@
         border-bottom-left-radius: 5px;
         border: 1px solid black;
         transition: all ease 0.3s; }
-      .toDo-main-wrap .toDo-block-wrap form input[type="text"]:focus {
+      .toDo-main-wrap .toDo-block-wrap .toDo-form input[type="text"]:focus {
         width: 400px; }
-      .toDo-main-wrap .toDo-block-wrap form input[type="text"]::placeholder {
+      .toDo-main-wrap .toDo-block-wrap .toDo-form input[type="text"]::placeholder {
         font-size: 15px;
         font-family: Arial;
         color: black; }
-      .toDo-main-wrap .toDo-block-wrap form input[type="button"] {
+      .toDo-main-wrap .toDo-block-wrap .toDo-form input[type="button"] {
         width: 100px;
         height: 40px;
         border-top-right-radius: 5px;
@@ -104,12 +104,12 @@
         border-left: 0;
         transition: all ease 0.3s;
         cursor: pointer; }
-        .toDo-main-wrap .toDo-block-wrap form input[type="button"]:hover {
+        .toDo-main-wrap .toDo-block-wrap .toDo-form input[type="button"]:hover {
           background: black;
           color: white; }
-        .toDo-main-wrap .toDo-block-wrap form input[type="button"]:active {
+        .toDo-main-wrap .toDo-block-wrap .toDo-form input[type="button"]:active {
           background: grey; }
-      .toDo-main-wrap .toDo-block-wrap form input[type="text"], .toDo-main-wrap .toDo-block-wrap form input[type="button"] {
+      .toDo-main-wrap .toDo-block-wrap .toDo-form input[type="text"], .toDo-main-wrap .toDo-block-wrap .toDo-form input[type="button"] {
         outline: none;
         font-size: 15px;
         font-family: Arial;
@@ -117,7 +117,7 @@
         background: transparent;
         box-sizing: border-box; }
 
-.deleteItem, .completedItem {
+.deleteItem, .completedItem, .editItem {
   width: 15px;
   height: 15px;
   float: right;
@@ -131,6 +131,9 @@
 
 .completedItem {
   right: 25px; }
+
+.editItem {
+  right: 45px; }
 
 .completed {
   text-decoration: line-through; }
@@ -166,5 +169,14 @@
 .deg4 {
   transform: rotate(4deg);
   background: white; }
+
+.edit-form {
+  display: none;
+  position: absolute;
+  left: 10px;
+  bottom: 20px; }
+
+.edit-button {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

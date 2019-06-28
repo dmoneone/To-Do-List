@@ -6,14 +6,15 @@ $(document).ready(function(){
        let todoList=JSON.parse(savedToDo);
        for(let key in todoList){
             AddToDoItem(todoList[key]);
+            console.log(todoList[key].id);
             if(todoList[key].isDone === true){
-                console.log([key]);
                 let li = $('.toDo-nav li');
                 $(li[key]).addClass('completed');
             }
        }
      }
-     $('.input-button').on('click', function(){
+    
+     $('.add-button').on('click', function(){
          let input_val = $('.input-text').val();
          let toDo = {
             text: input_val,
@@ -22,6 +23,7 @@ $(document).ready(function(){
          }
          if(toDo.text.length > 3){
              AddToDoItem(toDo);
+             console.log(toDo);
              $('.input-text').val('');
          }
          else{
@@ -42,7 +44,24 @@ $(document).ready(function(){
              $(event.target).parent().parent().addClass('completed');
              obj.isDone = true;
              localStorage.setItem('todo', JSON.stringify(toDoArray));
+         }}),$("<div/>",{class: "editItem", html: '<i class="fas fa-edit"></i>', click: function(){
+             $('.input-text').val(obj.text);
+             $('.edit-button').show();
+             $('.add-button').hide(); 
+             $('.edit-button').on('click', function(){
+                 let new_input_val = $('.input-text').val();
+                 $('.add-button').show();
+                 $('.edit-button').hide(); 
+                 $('.input-text').val('');
+                 obj.text = new_input_val;
+                 console.log(obj);
+                 localStorage.setItem('todo', JSON.stringify(toDoArray));
+                 location.reload();
+             });
          }})).appendTo($('.toDo-nav'));
+     }
+     function replaceValue(newValue){
+         
      }
      function timeConverter(UNIX_timestamp){
          var t = new Date(UNIX_timestamp*1000);

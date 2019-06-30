@@ -59,9 +59,6 @@ $(document).ready(function(){
              });
          }})).appendTo($('.toDo-nav'));
      }
-     function replaceValue(newValue){
-         
-     }
      function timeConverter(UNIX_timestamp){
          var t = new Date(UNIX_timestamp*1000);
          var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
